@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: -11px;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+#textbox {
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    color: white;
+    height: 100vw;
+    z-index: 1;
+    font-family: 'Reenie Beanie', cursive;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0.5em;
+    font-size: 8em;
+    line-height: 0.75em;
+}
+
+#play, #tutorial, #code{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 2.5em;
+    font-weight: 500;
+    font-family: "Gluten", cursive;
+    padding: 0.4em;
+    color: rgb(0, 0, 0);
+    background-color: white;
+
+    display: flex;
+    width: 6em;
+    justify-content: center;
+    margin: auto;
+    border-radius: 0.75em;
+    border: rgb(0, 0, 0) solid 0.08em;
+}
+#play:hover, #tutorial:hover, #code:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: rgb(255, 255, 255) solid 0.08em;
+    width: 7em;
+}
+#menu {
+    margin-top: 4.5em;
+}
+#menu a{
+    transition: 0.17s;
+}
+/*Links*/
+#play{
+    transition: cubic-bezier(0, 0.95, 0.58, 1);
+    animation-name: menuswish;
+    animation-duration: 0.55s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+#tutorial{
+    transition: cubic-bezier(0, 0.95, 0.58, 1);
+    animation-name: menuswish;
+    animation-duration: 0.55s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0.15s;
+    opacity: 0;
+}
+#code{
+    transition: cubic-bezier(0, 0.95, 0.58, 1);
+    animation-name: menuswish;
+    animation-duration: 0.55s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+#by{
+    font-family: "Gluten", cursive;
+    transform: translateY(-0.3em);
+    margin-top: 0.35rem;    
+}
+
+/*images*/
+#base {
+    transform: scale(0.35) rotate(320deg);
+    position: absolute;
+    left: 38vw;
+    z-index: 0;
+    transition: ease-out;
+        
+    animation-name: filler2;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+
+}
+
+#cape {
+    transform: scale(0.36) scaleX(-1) rotate(70deg);
+    position: absolute;
+    left: 52vw;
+    bottom: 0;
+    transition: ease-out;
+
+    animation-name: filler;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+
+figure{
+    animation-name: fadezoom;
+    animation-duration: 1.75s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0.75s;
+    opacity: 0;
+}
+
+#chars {
+    background-color: rgb(255, 255, 255);
+    background-image: url(/concordia/works/sketchyfighters/images/paper.webp);
+}
+
+/*ANIMATIONS*/
+
+@keyframes menuswish {
+    0% {
+        transform: translateX(-15vw);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+@keyframes fadezoom {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes filler {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 0.7vh;
+        left: 52.5vw;
+    }
+    100% {
+        bottom: 0;
+    }
+
+}
+@keyframes filler2 {
+    0% {
+    }
+    50% {
+        left: 38.5vw;
+    }
+    100% {
+    }
+
+}
+
+/*QUERY*/
+
+@media screen and (max-width: 1300px) {
+    #base {
+            transform: scale(0.35) rotate(320deg);
+            position: absolute;
+            left: 30vw;
+        }
+    
+        #cape {
+            transform: scale(0.36) scaleX(-1) rotate(69deg);
+            position: absolute;
+            left: 42vw;
+            bottom: 0;
+        }
+}
+@media screen and (max-width: 1000px) {
+    #textbox {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100vw;
+    }
+    #chars{
+        background-color: none;
+    }
+#chars img{
+    transform: scale(0);
+    opacity: 0;
+    bottom: 0;
+        z-index: -1;
+    }
+}

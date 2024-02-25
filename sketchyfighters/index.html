@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="./images/appicon.png">
+		<title>Sketchy Fighters by Jason Basilan</title>
+	<style>
+		
+		@import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
+		html{  font-family: "Gluten", cursive;}
+		body { margin: 0px; overflow: hidden; background-image: url(/concordia/works/sketchyfighters/images/paper.webp); }
+		.arrow { position: absolute; background: none; width: 3em; height: 3em; }
+		#uArrow { top:0px; width: 100%; }
+		#dArrow { bottom:0px; width: 100%; }
+		#lArrow { left:0px; height: 100%; }
+		#rArrow { right:0px; height: 100%; }
+		#playbtn {position: absolute; right: 37vw; top: 40vh; font-family: "Gluten", cursive; background-color: transparent; padding: 0.4em; border-radius: 0.75em; border: rgb(0, 0, 0) solid 0.08em; font-size: 5vw; transition: 0.2s; width: 6em;}
+		#playbtn:hover{background-color: black; color: white; transform: scale(0.96);}
+		span::before {position: absolute;right: 50vw; top: 48vh; font-size: 6vw; content: ''; animation: count 4s ease-in-out; text-align: center;}
+		@keyframes count {0% {content: '3';}15% {content: '3';}40% {content: '2';}65% {content: '1';}70% {content: 'FIGHT!';}100% {content: 'FIGHT!';}}	
+	</style>
+	</head>
+	<body>
+		<span id="countdown"></span>
+		<nav>
+			<div id="uArrow" class="arrow"></div>
+			<div id="dArrow" class="arrow"></div>
+			<div id="lArrow" class="arrow"></div>
+			<div id="rArrow" class="arrow"></div>
+		</nav>
+
+
+		 
+		<button id="playbtn">Start</button>	
+
+
+		<div id="gameBox">
+			<audio id="bg">
+				<source src="./sound/bgaudio.mp3" type="audio/wav">
+			</audio>
+			<audio id="fight">
+				<source src="./sound/fight.wav" type="audio/wav">
+			</audio>
+			<audio id="victory">
+				<source src="./sound/winner.wav" type="audio/wav">
+			</audio>
+			<audio id="kickhit">
+				<source src="./sound/kick.m4a" type="audio/wav">
+			</audio>
+			<audio id="kickmiss">
+				<source src="./sound/kickmiss.wav" type="audio/wav">
+			</audio>
+			<audio id="laserhit">
+				<source src="./sound/laserhit.wav" type="audio/wav">
+			</audio>
+			<audio id="lasermiss">
+				<source src="./sound/missbeam.wav" type="audio/wav">
+			</audio>
+		<script src="js/fighter_game.js"></script>
+		</div>
+	</body>
+</html>

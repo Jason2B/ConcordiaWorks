@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: -11px;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+#about{
+    margin: 1rem auto 0;
+    width: 60ch;
+}
+#textbox {
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    color: white;
+    height: 100vw;
+    z-index: 1;
+    font-family: 'Reenie Beanie', cursive;
+    text-align: center;
+}
+#container{
+    display: grid;
+    background-color: white;
+    color: black;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 1em;
+    border: double 0.5em;
+    margin: 0.5rem 1em 0;
+    padding: 1em 0.75em 1.5em 0.75em;
+}
+#text{
+    margin: 1em 4.5em;
+    font-size: 1em;
+    font-family: "Gluten", cursive;
+    text-align: left;
+    line-height: 1.2em;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 4rem;
+    font-size: 3em;
+    line-height: 0.75em;
+    padding: 0 0.25em;
+    text-decoration: underline;
+}
+h2{
+    text-align: center;
+}
+a {
+   color: white;
+   font-weight: bold;
+}
+
+#copyright{
+    position: relative;
+}
+
+#menu a:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: rgb(255, 255, 255) solid 0.08em;
+    width: 7em;
+}
+
+#menu {
+    margin-top: 2em;
+}
+
+#menu a {
+    transition: 0.17s;
+    color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 2.5em;
+        font-weight: 500;
+        font-family: "Gluten", cursive;
+        padding: 0.4em;
+        color: rgb(0, 0, 0);
+        background-color: white;
+    
+        display: flex;
+        width: 6em;
+        justify-content: center;
+        margin: auto;
+        border-radius: 0.75em;
+        border: rgb(0, 0, 0) solid 0.08em;
+}
+
+/*Links*/
+#play {
+    transition: cubic-bezier(0, 0.95, 0.58, 1);
+    animation-name: menuswish;
+    animation-duration: 0.55s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+
+#text a{
+    text-decoration: none;
+}
+
+/*images*/
+#base {
+    transform: scale(0.35) rotate(320deg);
+    position: absolute;
+    left: 38vw;
+    z-index: 0;
+    transition: ease-out;
+
+    animation-name: filler2;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+
+}
+
+#cape {
+    transform: scale(0.36) scaleX(-1) rotate(70deg);
+    position: absolute;
+    left: 52vw;
+    bottom: 0;
+    transition: ease-out;
+
+    animation-name: filler;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+
+figure {
+    animation-name: fadezoom;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    opacity: 0;
+}
+
+#chars {
+    background-image: url(/concordia/works/sketchyfighters/images/paper.webp);
+}
+
+/*ANIMATIONS*/
+#everything{
+    animation-name: fadezoom;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    opacity: 0;
+}
+
+@keyframes menuswish {
+    0% {
+        transform: translateX(-15vw);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+
+@keyframes fadezoom {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes filler {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 0.7vh;
+        left: 52.5vw;
+    }
+
+    100% {
+        bottom: 0;
+    }
+
+}
+
+@keyframes filler2 {
+    0% {}
+
+    50% {
+        left: 38.5vw;
+    }
+
+    100% {}
+
+}
+
+/*QUERY*/
+
+@media screen and (max-width: 1300px) {
+    #base {
+        transform: scale(0.35) rotate(320deg);
+        position: absolute;
+        left: 30vw;
+    }
+
+    #cape {
+        transform: scale(0.36) scaleX(-1) rotate(69deg);
+        position: absolute;
+        left: 42vw;
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #textbox {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100vw;
+    }
+
+    #chars {
+        background-color: none;
+    }
+
+    #chars img {
+        transform: scale(0);
+        opacity: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+@media screen and (max-width: 715px) {
+    #container{
+            grid-template-columns: 1fr;
+
+    }
+    #textbox{
+        height: fit-content;
+    }
+    #text{
+        margin: 1em 2em;
+    }
+    }
